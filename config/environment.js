@@ -7,6 +7,9 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
+      EXTEND_PROTOTYPES: {
+        Date: false,
+      },
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
@@ -18,6 +21,11 @@ module.exports = function(environment) {
       // when it is created
     }
   };
+
+  ENV['g-map'] = {
+    libraries: ['places', 'geometry'],
+    key: 'yourID'
+  }
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
